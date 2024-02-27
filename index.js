@@ -1,10 +1,10 @@
 const API = "3bd8c909c9fd49a1ac4024e544c0a8eb";
-const url = "https://newsapi.org/v2/top-headlines?country=in&category=technology";
+const url = "https://newsapi.org/v2/everything?q=";
 
 window.addEventListener('load',()=>fetchNews("Agriculture"));
 
 async function fetchNews(query) {
-    const response = await fetch(`${url}&apiKey=${API}`);
+    const response = await fetch(`${url}${query}&apiKey=${API}`);
     const data = await response.json();
     console.log(data);
     bindData(data.articles);
